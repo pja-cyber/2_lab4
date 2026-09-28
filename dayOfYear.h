@@ -28,6 +28,12 @@ namespace Parkjooae2649017
         }
 
     public:
+        dayofyear(int m =1, int d=1)
+        :month{m}, day{d}
+        {
+            testmonth(); testday();
+        }
+
         void input()
         {
             std::cout<<"Enter the month:";
@@ -37,7 +43,7 @@ namespace Parkjooae2649017
         }
         void setmonth(int m) { month= m; testmonth();}
         void setday(int d) { day=d; testday();}
-        void print()
+        void print() const
         {
             switch (month)
             {
@@ -55,8 +61,8 @@ namespace Parkjooae2649017
             case 12: std::cout <<"Dec. "; break;
             } std::cout<< day <<"\n";
         }
-        int getmonth() {return month;}
-        int getday() {return day;}
+        int getmonth() const {return month;}
+        int getday() const {return day;}
         
     };
 }
